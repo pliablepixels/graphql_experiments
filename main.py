@@ -12,6 +12,8 @@ types_list = load_schema_from_path('./schemas/')
 resolver_list = []
 
 for item in list_of_resolvers:
-    resolver_list.append(item.get_resolvers())
+    resolvers = item.get_resolvers()
+    for i in resolvers:
+        resolver_list.append(i)
     schema = make_executable_schema(types_list , resolver_list)
     app = GraphQL(schema, debug=True)

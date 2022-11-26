@@ -4,14 +4,15 @@ logging.basicConfig(level=logging.INFO)
 
 class SchemaB: 
     def __init__(self):
-        self.resolver = ObjectType('Query')
-        self.resolver.set_field('getSchemaB', self.resolve_schemaB)
-        logging.info('Schema B resolver is bound')
+        self.resolvers = []
+        self.resolvers.append(ObjectType('Query'))
+        self.resolvers[0].set_field('getSchemaB', self.resolve_query_getSchemaB)
+        logging.info('Schema B query resolver is bound')
 
     def get_resolvers(self):
-        return self.resolver
+        return self.resolvers
 
-    def resolve_schemaB(self,obj,info):
+    def resolve_query_getSchemaB(self,obj,info):
         logging.info('Inside Schema B resolver')
         return {
                     'text':'This is SchemaB text from resolver',
