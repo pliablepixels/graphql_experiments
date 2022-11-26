@@ -1,11 +1,27 @@
 query {
+ # this query path directly invokes resolver SchemaA's query
   getSchemaA {
-    text_val
-  }
-  getSchemaC {
-    schemaA {
+    data {
       text_val
     }
   }
- 
+  
+  # this query path invokes  resolver for SchemaC's query
+  # which in turn calls resolvers of schemaB's type resolver and 
+  # schemaA's type resolver
+  getSchemaC {
+    schemaB {
+      data {
+      	text
+      	number  
+      }
+      
+    }
+    schemaA {
+     	data {
+      	text_val
+    	}
+  	}
+  }
 }
+  

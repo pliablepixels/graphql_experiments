@@ -1,8 +1,12 @@
 extend type Query {
     getSchemaA:SchemaA
 }
-
+# This is a wrapper so I can set a resolver for the full object in this schema
 type SchemaA {
+    data:_SchemaA
+
+}
+type _SchemaA {
     text_val:String
 }
 

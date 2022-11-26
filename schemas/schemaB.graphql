@@ -2,7 +2,12 @@ extend type Query {
     getSchemaB:SchemaB
 }
 
+# This is a wrapper so I can set a resolver for the full object in this schema
 type SchemaB {
+    data:_SchemaB
+}
+
+type _SchemaB {
     text:String
     number:Int
 }
