@@ -1,0 +1,9 @@
+extend type Query {
+    getSchemaB:SchemaB
+}
+
+type SchemaB {
+    text:String
+    number:Int
+}
+

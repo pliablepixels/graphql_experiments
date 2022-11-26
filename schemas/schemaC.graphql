@@ -1,0 +1,9 @@
+extend type Query {
+    getSchemaC:SchemaC
+}
+
+type SchemaC {
+    schemaA: SchemaA
+    schemaB: SchemaB
+    moreData: Float
+}
