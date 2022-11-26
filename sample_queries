@@ -1,0 +1,11 @@
+query {
+  getSchemaA {
+    text_val
+  }
+  getSchemaC {
+    schemaA {
+      text_val
+    }
+  }
+ 
+}
