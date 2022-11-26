@@ -8,6 +8,7 @@ class SchemaA:
         self.resolvers.append(ObjectType('Query'))
         self.resolvers[0].set_field('getSchemaA', self.resolve_query_getSchemaA)
         self.resolvers.append(ObjectType('SchemaA'))
+        #self.resolvers[1].set_type_resolver(self.resolve_type_schemaA)
         self.resolvers[1].set_field('text_val', self.resolve_type_schemaA)
         logging.info('Schema A resolver is bound')
 

@@ -15,9 +15,7 @@ class SchemaC:
     def resolve_query_getSchemaC(self,obj,info):
         logging.info('Inside Schema C resolver')
         return {
-                    'schemaA': {
-                        'text_val': 'This is text inside SchemaC'
-                    },
+                    'schemaA': {}, # this will be replaced with schemaA type resolver
                     'schemaB': {
                         'text': 'This is text inside SchemaC',
                         'number':3
